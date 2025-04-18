@@ -1,30 +1,27 @@
-import React, { use } from 'react';
-import { FaStarHalfAlt } from "react-icons/fa";
-import { Link } from 'react-router';
+import React, {use} from 'react';
+import {FaStarHalfAlt} from "react-icons/fa";
+import {Link} from 'react-router';
 
 
 const Book = ({singleBook}) => {
-    // const data = use(bookPromise);
 
-    // console.log(data)
-
-    const { bookName,author,bookId,image,rating,category,tags,yearOfPublishing,publisher} = singleBook || {};
+    const {bookName, author, bookId, image, rating, category, tags, yearOfPublishing, publisher} = singleBook || {};
 
 
     return (
         <Link to={`/bookDetails/${bookId}`}>
-            <div className="card bg-base-100 w-96 shadow-sm border p-6 shadow">
+            <div className="card bg-base-100 w-96 shadow-sm border p-6">
                 <figure className='p-4 bg-gray-100 w-2/3 mx-auto'>
                     <img
                         className='h-[166px]'
                         src={image}
-                        alt="Shoes" />
+                        alt=""/>
                 </figure>
                 <div className="card-body ">
 
                     <div className='flex justify-center gap-10'>
                         {
-                            tags.map(tag => <button >{tag}</button>)
+                            tags.map(tag => <button>{tag}</button>)
                         }
                     </div>
                     <h2 className="card-title">
@@ -36,7 +33,7 @@ const Book = ({singleBook}) => {
                     <div className='border-t-1 border-dashed'></div>
                     <div className="card-actions justify-end">
                         <div className="badge badge-outline">{category}</div>
-                        <div className="badge badge-outline">{rating} <FaStarHalfAlt /></div>
+                        <div className="badge badge-outline">{rating} <FaStarHalfAlt/></div>
                     </div>
                 </div>
             </div>
